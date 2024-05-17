@@ -5,9 +5,10 @@ pipeline {
         stage('All files in directory') {
             steps {
                 script {
-		    echo 'Hello World'
+                    echo 'Hello World'
                     def output = bat(script: 'task.bat', returnStdout: true).trim()
-                    echo "All files:\n${output}"
+                    echo "All files:"
+                    output.readLines().findAll { it =~ /^[^\s]+\.\w+$/ }.each { echo it }
                 }
             }
         }
