@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Cloud Task') {
       steps {
-	echo 'Hello World'
-        bat 'task.bat'
+	def output = bat(script: 'task.bat', returnStdout: true).trim()
+        echo "Files:\n======\n${output}"
       }
     }
   }
