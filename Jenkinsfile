@@ -6,8 +6,8 @@ pipeline {
             steps {
                 script {
 		    echo 'Hello World'
-                    sh 'chmod +x ./task.sh'
-                    def output = sh(script: './task.sh', returnStdout: true).trim()
+                    sh 'chmod +x task.sh'
+                    def output = sh(script: 'task.sh', returnStdout: true).trim()
                     echo "Files:\n======\n${output}"
                 }
             }
