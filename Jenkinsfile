@@ -1,11 +1,14 @@
 pipeline {
-  agent any
-  stages {
-    stage('Cloud Task') {
-      steps {
-	def output = bat(script: 'task.bat', returnStdout: true).trim()
-        echo "Files:\n======\n${output}"
-      }
+    agent any
+
+    stages {
+        stage('All files in directory') {
+            steps {
+                script {
+                    def output = bat(script: 'task.bat', returnStdout: true).trim()
+                    echo "Output:\n======\n${output}"
+                }
+            }
+        }
     }
-  }
 }
