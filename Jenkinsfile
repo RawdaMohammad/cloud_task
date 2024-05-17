@@ -6,9 +6,9 @@ pipeline {
             steps {
                 script {
 		    echo 'Hello World'
-                    sh 'chmod +x task.sh'
-                    def output = sh(script: 'task.sh', returnStdout: true).trim()
-                    echo "Files:\n======\n${output}"
+		    bat 'task.bat'
+                    def output = bat(script: 'task.bat', returnStdout: true).trim()
+                    echo "All files:\n${output}"
                 }
             }
         }
