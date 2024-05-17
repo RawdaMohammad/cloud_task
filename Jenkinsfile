@@ -6,7 +6,6 @@ pipeline {
             steps {
                 script {
 		    echo 'Hello World'
-		    bat 'task.bat'
                     def output = bat(script: 'task.bat', returnStdout: true).trim()
                     echo "All files:\n${output}"
                 }
