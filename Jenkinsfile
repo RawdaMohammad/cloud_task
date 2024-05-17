@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('hello') {
+    stage('Hello World') {
       steps {
         bat 'task.bat'
       }
