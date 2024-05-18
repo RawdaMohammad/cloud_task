@@ -2,23 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout 1') {
+        stage('First Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/RawdaMohammad/task2.git'
             }
         }
-        stage('Execute Script 1') {
+        stage('Repo 1') {
             steps {
                 // Execute the first batch script
                 bat 'list_files.bat'
             }
         }
-        stage('Checkout 2') {
+        stage('Second Repo') {
             steps {
                 git url: 'https://github.com/kholoudKamkhli/Jenkins'
             }
         }
-        stage('Execute Script 2') {
+        stage('Repo 2') {
             steps {
                 // Execute the second batch script
                 bat 'batch_file.bat'  // Assuming this script is a batch file to be executed on a Windows agent
